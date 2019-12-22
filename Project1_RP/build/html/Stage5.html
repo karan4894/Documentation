@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2D2D2D" />
+  
+  <title>Inventory management software :: Coding</title>
+  
+
+  <link rel="icon" type="image/png" sizes="32x32" href="_static/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="_static/img/favicon-16x16.png">
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+
+  <link rel="stylesheet" href="_static/css/insegel.css"/>
+
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'',
+        VERSION:'',
+        LANGUAGE:'None',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+    };
+  </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+
+  <script src="https://email.tl.fortawesome.com/c/eJxNjUEOgyAQAF8jR7Kw6wIHDh7sP1Cw2mgxgmn6-3JsMqc5zEQfE8dkxOY1KKMUOI3ACFKRJpSW2AAp7ontYIaxI6i7XPJVwyeVfCQ550Os3jLrGSNOLgbdAy6s0PBk2TFNjEbsfq31LB0OnX407pJa5v2faRadwSW63mn5KuLyR9j2tgx3zecanl-55R_-jjPs"></script>
+
+</head>
+
+<body>
+  <div id="insegel-container">
+    <header>
+      <div id="logo-container">
+          
+          <a href="index.html"><img src="_static/img/logo.svg"></a>
+          
+
+      </div>
+      <div id="project-container">
+        <h1>Inventory management software Documentation</h1>
+      </div>
+    </header>
+
+    <div id="content-container">
+
+      <div id="main-content-container">
+        <div id="main-content-header">
+          <h1>Coding</h1>
+        </div>
+        <div id="main-content">
+          
+  <div class="section" id="coding">
+<h1>Coding<a class="headerlink" href="#coding" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Following is the Coding structure</p></li>
+<li><p>There are 2 folders and thats it !</p></li>
+<li><p>Properly everything is stored in them.</p></li>
+<li><p>Folder 1</p></li>
+<li><p>Contains API details</p></li>
+<li><dl class="simple">
+<dt>First we access API services of 3 Websites</dt><dd><ul>
+<li><p>Element 14</p></li>
+<li><p>Mouser</p></li>
+<li><p>Digikey</p></li>
+<li><p>Code is stored on Git hub</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>A small example of one API access showed ! - i.e Element14</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://api.element14.com//catalog/products?term=manuPartNum:C3216X7R1A106M160AC&amp;storeInfo.id=uk.farnell.com&amp;resultsSettings.offset=0&amp;resultsSettings.numberOfResults=1&amp;resultsSettings.refinements.filters=&amp;resultsSettings.responseGroup=medium&amp;callInfo.omitXmlSchema=false&amp;callInfo.callback=&amp;callInfo.responseDataFormat=JSON&amp;callinfo.apiKey=88888888888888888&amp;units=INR&quot;</span><span class="p">)</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+        <span class="n">pprint</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Folder 2</dt><dd><ul>
+<li><p>Folder 2 has Flask Frame Work Details</p></li>
+<li><p>Template , Static and app.py file</p></li>
+<li><p>Templates folder has all HTML files</p></li>
+<li><p>Static folder has all scripting files</p></li>
+<li><p>App.py is the scripting program keeping in tact everything !</p></li>
+<li><p>Code will be on Github</p></li>
+<li><p>Following code is of App.py file - the scripting file.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">wtforms</span> <span class="kn">import</span> <span class="n">Form</span><span class="p">,</span><span class="n">StringField</span><span class="p">,</span><span class="n">TextAreaField</span><span class="p">,</span><span class="n">PasswordField</span><span class="p">,</span><span class="n">validators</span>
+<span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span><span class="n">render_template</span><span class="p">,</span><span class="n">request</span><span class="p">,</span><span class="n">flash</span><span class="p">,</span><span class="n">redirect</span><span class="p">,</span><span class="n">url_for</span><span class="p">,</span><span class="n">session</span><span class="p">,</span><span class="n">logging</span><span class="p">,</span><span class="n">jsonify</span>
+<span class="kn">from</span> <span class="nn">wtforms</span> <span class="kn">import</span> <span class="n">Form</span><span class="p">,</span><span class="n">StringField</span><span class="p">,</span><span class="n">TextAreaField</span><span class="p">,</span><span class="n">PasswordField</span><span class="p">,</span><span class="n">validators</span>
+<span class="kn">from</span> <span class="nn">passlib.hash</span> <span class="kn">import</span> <span class="n">sha256_crypt</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="kn">import</span> <span class="nn">http.client</span><span class="o">,</span><span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">zeep</span> <span class="kn">import</span> <span class="n">Client</span>
+
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># single home</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">home</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;home.html&#39;</span><span class="p">)</span>
+<span class="c1"># single article</span>
+
+<span class="k">def</span> <span class="nf">about</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;about.html&#39;</span><span class="p">)</span>
+
+<span class="c1"># Dashboard</span>
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/dashboard&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">dashboard</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;dashboard.html&#39;</span><span class="p">)</span>
+<span class="c1">#now the form part start</span>
+
+<span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/select_indent&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">select_dashboard</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;select_indent.html&#39;</span><span class="p">)</span>
+
+<span class="nd">@app</span> <span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/indent1&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">indent1</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;indent_Element14.html&#39;</span><span class="p">)</span>
+
+<span class="nd">@app</span> <span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/indent2&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">indent2</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;indent_Digikey.html&#39;</span><span class="p">)</span>
+
+<span class="nd">@app</span> <span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/indent3&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">indent3</span><span class="p">():</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;indent_Mouser.html&#39;</span><span class="p">)</span>
+
+
+<span class="c1">#########################################################################</span>
+<span class="c1"># ELement 14</span>
+<span class="nd">@app</span> <span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/output&#39;</span><span class="p">,</span><span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">output</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+                <span class="n">manupno</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s1">&#39;manup&#39;</span><span class="p">]</span> <span class="c1">#From form we are taking the data.</span>
+                <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://api.element14.com//catalog/products?term=manuPartNum:&quot;</span><span class="o">+</span><span class="n">manupno</span><span class="o">+</span><span class="s2">&quot;&amp;storeInfo.id=in.element14.com&amp;resultsSettings.offset=0&amp;resultsSettings.numberOfResults=1&amp;resultsSettings.refinements.filters=&amp;resultsSettings.responseGroup=medium&amp;callInfo.omitXmlSchema=false&amp;callInfo.callback=&amp;callInfo.responseDataFormat=JSON&amp;callinfo.apiKey=888888888888888888888&amp;units=INR&quot;</span><span class="p">)</span>
+                <span class="n">json_object</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span> <span class="c1"># remember you converted string to json object using .json and in python json object acts as dictionary.</span>
+                <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">json_object</span><span class="p">))</span>
+                <span class="c1">#new_json = (json_object[&#39;manufacturerPartNumberSearchReturn&#39;][&#39;products&#39;][0])</span>
+                <span class="n">html</span> <span class="o">=</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;output.html&#39;</span><span class="p">,</span><span class="n">temp</span><span class="o">=</span><span class="n">json_object</span><span class="p">)</span>
+                <span class="n">json_object</span><span class="p">[</span><span class="s1">&#39;dict&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">html</span> <span class="c1"># python dictionary , then keychanged from python object to json object.</span>
+                <span class="k">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">json_object</span><span class="p">));</span>
+                <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">json_object</span><span class="p">)</span>
+
+<span class="c1">###########################################################################</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+        <span class="n">app</span><span class="o">.</span><span class="n">secret_key</span> <span class="o">=</span> <span class="s1">&#39;secret123&#39;</span>
+        <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+
+
+        </div>
+      </div>
+
+      <div id="side-menu-container">
+
+        <div id="search" role="search">
+        <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+            <input type="text" name="q" placeholder="Search..." />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+        </form>
+</div>
+
+        <div id="side-menu" role="navigation">
+
+          
+  
+    
+  
+  
+    <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Problem_statement.html">Problem Statement:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation Flowchart  :</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Index.html">Following is Flow of Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stage1.html">Information Gathering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stage2.html">Requirement Gathering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stage3.html">Design - Flowchart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stage4.html">Front End - Glims</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Coding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stage6.html">Review and testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stage7.html">Maintenace</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stage8.html">Back End</a></li>
+</ul>
+
+  
+
+
+        </div>
+
+        
+
+      </div>
+
+    </div>
+
+<footer>
+    <div id="footer-info">
+        <ul id="build-details">
+            
+                <li class="footer-element">
+                    
+                        <a href="_sources/Stage5.rst.txt" rel="nofollow"> source</a>
+                    
+                </li>
+            
+
+            
+
+            
+        </ul>
+        <div id="credit">
+            created with <a href="http://sphinx-doc.org/">Sphinx</a> and <a href="https://github.com/Autophagy/insegel">Insegel</a>
+
+        </div>
+    </div>
+
+    <a id="menu-toggle" class="fa fa-bars" aria-hidden="true"></a>
+
+    <script type="text/javascript">
+      $("#menu-toggle").click(function() {
+        $("#menu-toggle").toggleClass("toggled");
+        $("#side-menu-container").slideToggle(300);
+      });
+    </script>
+
+</footer> 
+
+</div>
+
+</body>
+</html>

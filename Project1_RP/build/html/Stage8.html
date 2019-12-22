@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2D2D2D" />
+  
+  <title>Inventory management software :: Back End</title>
+  
+
+  <link rel="icon" type="image/png" sizes="32x32" href="_static/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="_static/img/favicon-16x16.png">
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+
+  <link rel="stylesheet" href="_static/css/insegel.css"/>
+
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'',
+        VERSION:'',
+        LANGUAGE:'None',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+    };
+  </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+
+  <script src="https://email.tl.fortawesome.com/c/eJxNjUEOgyAQAF8jR7Kw6wIHDh7sP1Cw2mgxgmn6-3JsMqc5zEQfE8dkxOY1KKMUOI3ACFKRJpSW2AAp7ontYIaxI6i7XPJVwyeVfCQ550Os3jLrGSNOLgbdAy6s0PBk2TFNjEbsfq31LB0OnX407pJa5v2faRadwSW63mn5KuLyR9j2tgx3zecanl-55R_-jjPs"></script>
+
+</head>
+
+<body>
+  <div id="insegel-container">
+    <header>
+      <div id="logo-container">
+          
+          <a href="index.html"><img src="_static/img/logo.svg"></a>
+          
+
+      </div>
+      <div id="project-container">
+        <h1>Inventory management software Documentation</h1>
+      </div>
+    </header>
+
+    <div id="content-container">
+
+      <div id="main-content-container">
+        <div id="main-content-header">
+          <h1>Back End</h1>
+        </div>
+        <div id="main-content">
+          
+  <div class="section" id="back-end">
+<h1>Back End<a class="headerlink" href="#back-end" title="Permalink to this headline">¶</a></h1>
+<dl>
+<dt><strong>What is Data ?</strong></dt><dd><ul class="simple">
+<li><p>In simple words data can be facts related to any object in consideration.</p></li>
+<li><p>For example your name, age, height, weight, etc are some data related to you.</p></li>
+<li><p>A picture , image , file , pdf etc can also be considered data.</p></li>
+</ul>
+</dd>
+<dt><strong>What is a Database ?</strong></dt><dd><ul class="simple">
+<li><p>Database is a systematic collection of data. Databases support storage and  manipulation of data. Databases make data management easy. Let’s discuss few examples.</p></li>
+<li><p>An online telephone directory would definitely use database to store data pertaining to people, phone numbers, other contact details, etc.</p></li>
+<li><p>Your electricity service provider is obviously using a database to manage billing , client related issues, to handle fault data, etc.</p></li>
+<li><p>Let’s also consider the face book. It needs to store, manipulate and present data related to members, their friends, member activities, messages, advertisements and lot more.</p></li>
+<li><p>We can provide countless number of examples for usage of databases.</p></li>
+</ul>
+</dd>
+<dt><strong>What is a Database Management System (DBMS) ?</strong></dt><dd><ul class="simple">
+<li><p>Database Management System (DBMS) is a collection of programs which enables its users to access database, manipulate data, reporting / representation of  data .</p></li>
+<li><p>It also helps to control access to the  database.</p></li>
+<li><p>Database Management Systems are not a new concept and as such had been first implemented in 1960s.</p></li>
+<li><p>Charles Bach men’s Integrated Data Store (IDS) is said to be the first DBMS in history.</p></li>
+<li><p>With time database technologies evolved a lot while usage and expected functionalities of databases have been increased immensely.</p></li>
+</ul>
+</dd>
+<dt><strong>So what is DBMS ?</strong></dt><dd><ul>
+<li><p>Database ——–&gt;  Management ——–&gt; System.</p></li>
+<li><p>Database – A respective Database to Store Data.</p></li>
+<li><dl class="simple">
+<dt>Management ——-&gt; CRUD operations</dt><dd><ol class="loweralpha simple">
+<li><p>Create</p></li>
+<li><p>Replace</p></li>
+<li><p>Update</p></li>
+<li><p>Delete</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p>System ——-&gt; A software to do basic things and carry out different operations.</p></li>
+<li><p>So basically with the help of software a required engineer can carry out different functionalities.</p></li>
+<li><p>So helping you to carry out different operations on database.</p></li>
+<li><p>System plays a major role.</p></li>
+<li><p>There are different DBMS software available in market.</p></li>
+<li><p>Before that lets look in for some more details.</p></li>
+<li><p>Architecture of Database:</p></li>
+<li><dl class="simple">
+<dt>It defines how you will store data in database and how different functionalities can work.</dt><dd><ul class="simple">
+<li><dl class="simple">
+<dt>Different Types of Architecture of Database.</dt><dd><ol class="arabic simple">
+<li><p>One Tier Architecture.</p></li>
+<li><p>Two Tier Architecture.</p></li>
+<li><p>Three Three Architecture.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>1 tier architecture:</dt><dd><ol class="loweralpha simple">
+<li><p>All in one computer.</p></li>
+<li><p>Application.</p></li>
+<li><p>Database and software.</p></li>
+<li><p>Presentation.</p></li>
+<li><p>All in one computer. E.g Ms Office</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>2 tier architecture.</dt><dd><ol class="loweralpha simple">
+<li><p>client</p></li>
+<li><p>server</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>3 tier architecture</dt><dd><ol class="loweralpha simple">
+<li><p>Mostly used for web applications.</p></li>
+<li><p>In this architecture – client side …application side and database.E.g Face book Login.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p>Now in 2 tier application is all on one computer and database on another.</p></li>
+<li><p>So in 2 tier architecture. One computer will have application and other will have database.</p></li>
+<li><p>Advantage is – speed.Clients are Direct communication. E.g. College,LAN etc</p></li>
+<li><p>But in case of 3 tier – GUI one case …application on some other computer [Which will have logic and manipulation of data facilities]— And now database i.e database server and thats how things work.</p></li>
+<li><p>So external level/ view level —— Conceptual and logic level —–Database level.</p></li>
+<li><dl>
+<dt>Following are images of 1 - tier 2 -tier and 3 tier architecture.</dt><dd><img alt="_images/1tier.png" src="_images/1tier.png" />
+<img alt="_images/2tier.png" src="_images/2tier.png" />
+<img alt="_images/3tier.png" src="_images/3tier.png" />
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Now how to maintain DBMS ?</dt><dd><ol class="arabic simple">
+<li><p>Manually.</p></li>
+<li><p>Electronically.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p>Manually – paper and file based system manually.</p></li>
+<li><dl class="simple">
+<dt>Electronically – Meaning</dt><dd><ul class="simple">
+<li><p>Computer</p></li>
+<li><p>Digital Diaries</p></li>
+<li><p>Mobile Phone</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>In computer –
+DBMS.
+Flat file system.
+Office Automation.</p>
+<ul class="simple">
+<li><p>What is File Based System.</p></li>
+<li><p>Storing lots of content in files.</p></li>
+<li><dl class="simple">
+<dt>But some  problems:</dt><dd><ol class="arabic simple">
+<li><p>Data redundancy(Renaming and more)</p></li>
+<li><p>Inconsistent data(Updating data everywhere)</p></li>
+<li><p>Data separation and isolation(As many things will be there at one place)</p></li>
+<li><p>Limited Data Sharing.</p></li>
+<li><p>Security problems and Backup Recovery problem.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p>Why DBMS BETTER THAN FILE SYSTEM ?</p></li>
+<li><dl class="simple">
+<dt>Advantages of using DBMS over File System.</dt><dd><ol class="arabic simple">
+<li><p>Controlling Data Redundancy.</p></li>
+<li><p>Data Abstraction. [eg. Showing data of individual much easily.]</p></li>
+<li><p>controls data inconsistency – As one change can update everywhere. Plus duplicate files also removed.</p></li>
+<li><p>Data  Manipulation easily.</p></li>
+<li><p>DBMS  easy sharing and Security.</p></li>
+<li><p>Support multiple users.</p></li>
+<li><p>Backup Recovery also good.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p>Database Schema.</p></li>
+<li><p>Overall design of database is called – Database schema</p></li>
+<li><p>So if you want to know anything about database – You can ask for database schema.</p></li>
+<li><dl class="simple">
+<dt>3 levels of database schema.</dt><dd><ol class="arabic simple">
+<li><p>View Schema.</p></li>
+<li><p>Logical Schema.</p></li>
+<li><p>Physical Schema.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p>E.g Simple database – mysql – you can see the table, Logical play with table and database. Physical Schema — Stored in form of hexamdecimal and binary data. Etc.</p></li>
+<li><p>View Schema – user will work.</p></li>
+<li><p>Logical Schema – Programmer will work. [Table format]</p></li>
+<li><p>Physical Schema – In database — These tables will be stored in bytes and bits.</p></li>
+<li><p>Database Models</p></li>
+<li><dl class="simple">
+<dt>Database models show the logical structure of database and logical structure of database.</dt><dd><ol class="arabic simple">
+<li><p>Hierarchical Database model</p></li>
+<li><p>Object Oriented Model</p></li>
+<li><p>Network model</p></li>
+<li><p>Relational database model</p></li>
+<li><p>Document Oriented model</p></li>
+<li><p>star schema etc …but top 4 are useful.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p>Entity relationship Diagram model.</p></li>
+<li><p>E-R Diagrams are visual representation of data in database and also helps in showing relationship of sets stored in database.</p></li>
+<li><dl class="simple">
+<dt>There are 4 major types of DBMS. Let’s look into them in detail.</dt><dd><ul>
+<li><p>Hierarchical - this type of DBMS employs the “parent-child” relationship of storing data. This type of DBMS is rarely used nowadays. Its structure is like a tree with nodes representing records and branches representing fields. The windows registry used in Windows XP is an example of a hierarchical database. Configuration settings are stored as tree structures with nodes.</p></li>
+<li><p>Network DBMS - this type of DBMS supports many-to many relations. This usually results in complex database structures.  RDM Server is an example of a database management system that implements the network model.</p></li>
+<li><p>Relational DBMS - this type of DBMS defines database relationships in form of tables, also known as relations. Unlike network DBMS, RDBMS does not support many to many relationships.Relational DBMS usually have pre-defined data types that they can support. This is the most popular DBMS type in the market. Examples of relational database management systems include MySQL, Oracle, and Microsoft SQL Server database.</p></li>
+<li><p>Object Oriented Relation DBMS - this type supports storage of new data types. The data to be stored is in form of objects. The objects to be stored in the database have attributes (i.e. gender, ager) and methods that define what to do with the data. PostgreSQL is an example of an object oriented relational DBMS.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt><strong>What is SQL ?</strong></dt><dd><ul class="simple">
+<li><p>Structured Query language (SQL) pronounced as “S-Q-L” or sometimes as “See-Quel”is actually the standard language for dealing with Relational Databases.</p></li>
+<li><p>SQL programming can be effectively used to insert, search, update, delete database records.</p></li>
+<li><p>That doesn’t mean SQL cannot do things beyond that.</p></li>
+<li><p>In fact it can do lot of things including, but not limited to, optimizing and maintenance of databases.</p></li>
+<li><p>Relational databases like MySQL Database, Oracle, Ms SQL server, Sybase, etc uses SQL ! How to use SQL syntaxes?</p></li>
+<li><p>SQL syntaxes used in these databases are almost similar, except the fact that some are using few different syntaxes and even proprietary SQL syntaxes.</p></li>
+<li><dl class="simple">
+<dt>SQL Example</dt><dd><p>SELECT * FROM Members WHERE Age &gt; 30</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt><strong>What is NoSQL ?</strong></dt><dd><ul class="simple">
+<li><p>NoSQL is an upcoming category of Database Management Systems. Its main characteristic is its non-adherence to Relational Database Concepts. NOSQL means “Not only SQL”.</p></li>
+<li><p>Concept of NoSQL databases grew with INTERNET giants such as Google, Face book, Amazon etc who deal with gigantic volumes of data.</p></li>
+<li><p>When you use relational database for massive volumes of data , the system starts getting slow in terms of response time.</p></li>
+<li><p>To overcome this , we could of course “scale up” our systems by upgrading our existing hardware.</p></li>
+<li><p>The alternative to the above problem would be to distribute our database load on multiple hosts as the load increases.</p></li>
+<li><p>This is known as “scaling out”.</p></li>
+<li><p>NOSQL database are non-relational databases that scale out better than relational databases and are designed with web applications in mind.</p></li>
+<li><p>They do not use SQL to query the data and do not follow strict schema like relational models.With NoSQL, ACID (Atomicity, Consistency, Isolation, Durability) features are not guaranteed always</p></li>
+<li><dl class="simple">
+<dt>So basically NOSQL database came into picture only for 2 things</dt><dd><ol class="arabic simple">
+<li><p>High speed for data retrieving.</p></li>
+<li><p>Flexibility and storage of data.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><p>There are many more things but these are two major.</p></li>
+<li><p>Major problem with RDBMS is scalability.</p></li>
+<li><p>What is scalability – Scalability is the capability of a system, network, or process to handle a growing amount of work, or its potential to be enlarged to accommodate that growth.</p></li>
+</ul>
+</dd>
+<dt><strong>NOSQL</strong></dt><dd><ol class="arabic simple">
+<li><p>Document database management system.</p></li>
+<li><p>Key value database. E.g Re disc.</p></li>
+<li><p>Wide column database – Cassandra.</p></li>
+<li><dl class="simple">
+<dt>Graph and node based database system – Neo4j</dt><dd><p>e.g Face book</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Now main question — When to use RDBMS and NOSQL</dt><dd><ul class="simple">
+<li><p>small scale – RDBMS</p></li>
+<li><p>But company , start up , scalability etc – NOSQL</p></li>
+<li><p>But there are many advantages and disadvantages</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+<dt><strong>What is Big Data ?</strong></dt><dd><ul class="simple">
+<li><p>A term for data sets that are so large that traditional methods of storage and processing are inadequate.</p></li>
+<li><p>Massive increase in data volume within the last decade or so.</p></li>
+<li><dl class="simple">
+<dt>Social network and search engines etc.</dt><dd><p>No Sql handles data more easily and nice.
+No Sql handles unstructured data.
+Cheaper to manage.
+Scaling and many things are necessary.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt><strong>What is Structured and Non – Structured data ?</strong></dt><dd><ul class="simple">
+<li><p>Structured: data stored in relational database, can be shown as two-dimensional table with rows and columns.</p></li>
+<li><p>Unstructured: voice, video, text, photo, time series, nested data, etc. which is impossible or very hard to be filled in two-dimensional tables.</p></li>
+</ul>
+<dl class="simple">
+<dt>Types of NoSQL databases</dt><dd><ul class="simple">
+<li><p>Document database – Mongodb CouchDB</p></li>
+<li><p>Column Database – Apache Cassandra</p></li>
+<li><p>Key value – Redis</p></li>
+<li><p>Cache system – Redis</p></li>
+<li><p>Graph Database – Neo4j</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+</dl>
+<a class="reference internal image-reference" href="_images/database.png"><img alt="alternate text" class="align-left" src="_images/database.png" style="width: 250px; height: 250px;" /></a>
+</div>
+
+
+        </div>
+      </div>
+
+      <div id="side-menu-container">
+
+        <div id="search" role="search">
+        <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+            <input type="text" name="q" placeholder="Search..." />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+        </form>
+</div>
+
+        <div id="side-menu" role="navigation">
+
+          
+  
+    
+  
+  
+    <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Problem_statement.html">Problem Statement:</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Documentation Flowchart  :</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Index.html">Following is Flow of Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stage1.html">Information Gathering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stage2.html">Requirement Gathering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stage3.html">Design - Flowchart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stage4.html">Front End - Glims</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stage5.html">Coding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stage6.html">Review and testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stage7.html">Maintenace</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Back End</a></li>
+</ul>
+
+  
+
+
+        </div>
+
+        
+
+      </div>
+
+    </div>
+
+<footer>
+    <div id="footer-info">
+        <ul id="build-details">
+            
+                <li class="footer-element">
+                    
+                        <a href="_sources/Stage8.rst.txt" rel="nofollow"> source</a>
+                    
+                </li>
+            
+
+            
+
+            
+        </ul>
+        <div id="credit">
+            created with <a href="http://sphinx-doc.org/">Sphinx</a> and <a href="https://github.com/Autophagy/insegel">Insegel</a>
+
+        </div>
+    </div>
+
+    <a id="menu-toggle" class="fa fa-bars" aria-hidden="true"></a>
+
+    <script type="text/javascript">
+      $("#menu-toggle").click(function() {
+        $("#menu-toggle").toggleClass("toggled");
+        $("#side-menu-container").slideToggle(300);
+      });
+    </script>
+
+</footer> 
+
+</div>
+
+</body>
+</html>

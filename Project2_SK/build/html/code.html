@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#2D2D2D" />
+  
+  <title>Machine Learning - [ Deep Learning ] :: &lt;no title&gt;</title>
+  
+
+  <link rel="icon" type="image/png" sizes="32x32" href="_static/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="_static/img/favicon-16x16.png">
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+
+  <link rel="stylesheet" href="_static/css/insegel.css"/>
+
+  <script type="text/javascript">
+    var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:'',
+        VERSION:'',
+        LANGUAGE:'None',
+        COLLAPSE_INDEX:false,
+        FILE_SUFFIX:'.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+    };
+  </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+
+  <script src="https://email.tl.fortawesome.com/c/eJxNjUEOgyAQAF8jR7Kw6wIHDh7sP1Cw2mgxgmn6-3JsMqc5zEQfE8dkxOY1KKMUOI3ACFKRJpSW2AAp7ontYIaxI6i7XPJVwyeVfCQ550Os3jLrGSNOLgbdAy6s0PBk2TFNjEbsfq31LB0OnX407pJa5v2faRadwSW63mn5KuLyR9j2tgx3zecanl-55R_-jjPs"></script>
+
+</head>
+
+<body>
+  <div id="insegel-container">
+    <header>
+      <div id="logo-container">
+          
+          <a href="index.html"><img src="_static/img/logo.svg"></a>
+          
+
+      </div>
+      <div id="project-container">
+        <h1>Machine Learning - [ Deep Learning ] Documentation</h1>
+      </div>
+    </header>
+
+    <div id="content-container">
+
+      <div id="main-content-container">
+        <div id="main-content-header">
+          <h1>&lt;no title&gt;</h1>
+        </div>
+        <div id="main-content">
+          
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container,
+div.nbinput.container div.prompt,
+div.nbinput.container div.input_area,
+div.nbinput.container div[class*=highlight],
+div.nbinput.container div[class*=highlight] pre,
+div.nboutput.container,
+div.nboutput.container div.prompt,
+div.nboutput.container div.output_area,
+div.nboutput.container div[class*=highlight],
+div.nboutput.container div[class*=highlight] pre {
+    background: none;
+    border: none;
+    padding: 0 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    min-width: 7ex;
+    padding-top: 0.4em;
+    padding-right: 0.4em;
+    text-align: right;
+    flex: 0;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    padding: 0.4em;
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background: #f5f5f5;
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># ------ Import all the libraries -----#</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># -------- Place where Test and Train saved ----#</span>
+
+<span class="n">DATADIR</span> <span class="o">=</span> <span class="s1">&#39;ASTRO_IMAGES_40/Bbh_ALL/TRAIN/TRAIN1/&#39;</span>
+<span class="n">CATEGORIES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bbh_grey_1&#39;</span><span class="p">,</span><span class="s1">&#39;bbh_noise_grey_1&#39;</span><span class="p">]</span> <span class="c1"># 0 for signal and 1  for noise</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Just for one image lets check.</span>
+
+<span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">CATEGORIES</span><span class="p">:</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DATADIR</span><span class="p">,</span><span class="n">category</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+        <span class="n">img_array</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="n">img</span><span class="p">),</span><span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img_array</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+        <span class="k">break</span>
+    <span class="k">break</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/code_1_0.png" src="_images/code_1_0.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">img_array</span><span class="o">.</span><span class="n">shape</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(1270, 1920)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="n">img_array</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">img_size</span> <span class="o">=</span> <span class="mi">120</span>
+<span class="n">new_array</span> <span class="o">=</span> <span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img_array</span><span class="p">,(</span><span class="n">img_size</span><span class="p">,</span><span class="n">img_size</span><span class="p">)))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">new_array</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(1270, 1920)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/code_3_1.png" src="_images/code_3_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Training the data.</span>
+
+<span class="n">training_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">def</span> <span class="nf">create_training_data</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">category</span> <span class="ow">in</span> <span class="n">CATEGORIES</span><span class="p">:</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DATADIR</span><span class="p">,</span><span class="n">category</span><span class="p">)</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">CATEGORIES</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">category</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">img_array</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="n">img</span><span class="p">),</span><span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+                <span class="n">new_array</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img_array</span><span class="p">,(</span><span class="n">img_size</span><span class="p">,</span><span class="n">img_size</span><span class="p">))</span>
+                <span class="c1">#print(new_array)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+                <span class="n">training_data</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">new_array</span><span class="p">,</span><span class="n">label</span><span class="p">])</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="n">create_training_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">training_data</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">sample</span> <span class="ow">in</span> <span class="n">training_data</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+[[12  4 14 ...  8  0  0]
+ [12  4 12 ...  6  0  0]
+ [12  4 10 ...  6  0  0]
+ ...
+ [ 0  0  4 ...  4  0  0]
+ [ 0  0  1 ...  4  0  0]
+ [ 0  0  0 ...  4  0  0]]
+[[27  2 34 ...  0  8 15]
+ [28  4 26 ...  0  4 20]
+ [20  6 24 ...  4  2 18]
+ ...
+ [ 0  0  0 ...  0  0  0]
+ [ 0  0  0 ...  0  0  0]
+ [ 0  0  0 ...  4  4  4]]
+[[16  0 44 ... 12  4  4]
+ [ 8  0 39 ... 14  8  4]
+ [12  0 28 ... 10  6  6]
+ ...
+ [ 4  0  0 ...  0  0  0]
+ [ 0  0  0 ...  0  0  0]
+ [ 4  1  0 ...  0  0  0]]
+[[34 16  0 ...  0  4  8]
+ [29 20  4 ...  0  8 19]
+ [16 24 12 ...  0 10 20]
+ ...
+ [20 10  8 ...  4  0  0]
+ [36 28 24 ...  4  4  4]
+ [32 32 28 ...  8  8  8]]
+[[255 255 255 ... 255 255 255]
+ [159 161 162 ... 161 162 159]
+ [  0   4  12 ...   6   8   0]
+ ...
+ [  0   4   4 ...  20  20  16]
+ [  4   4   4 ...  20  20  20]
+ [255 255 255 ... 255 255 255]]
+[[ 8  0 10 ...  2 21  0]
+ [ 8  4  7 ...  0 25  0]
+ [12  8  4 ...  0 28  0]
+ ...
+ [ 4  4  4 ...  4  8 12]
+ [ 4  8  4 ...  8 12 12]
+ [ 8  8  4 ...  8 12 16]]
+[[36 17 38 ...  4  8 14]
+ [22 16 34 ...  2  1 12]
+ [12 10 24 ...  6  0  8]
+ ...
+ [ 4  8 16 ...  0  0  4]
+ [15 16 20 ...  4  4  4]
+ [20 20 20 ...  4  8  8]]
+[[ 2  6  6 ...  0  0 12]
+ [ 4 14  3 ...  0  4 12]
+ [ 6 22  0 ...  0  0 12]
+ ...
+ [ 0  4  8 ...  0  0  4]
+ [ 0  4  8 ...  4  4  4]
+ [ 4  8  8 ...  9  8  4]]
+[[255 255 255 ... 255 255 255]
+ [162 161 171 ... 164 162 159]
+ [  6   6  28 ...  12   8   2]
+ ...
+ [  4   8   8 ...   0   0   0]
+ [  4   8   8 ...   0   0   3]
+ [255 255 255 ... 255 255 255]]
+[[255 255 255 ... 255 255 255]
+ [161 174 165 ... 159 162 161]
+ [  6  40  14 ...   2   6   4]
+ ...
+ [  0   0   0 ...   4   4   4]
+ [  0   0   0 ...   0   4   4]
+ [255 255 255 ... 255 255 255]]
+[[ 4 22 15 ... 12  6 24]
+ [ 4 30 24 ... 12  8 32]
+ [14 26 34 ...  6 10 32]
+ ...
+ [ 0  0  0 ...  8 12 16]
+ [ 0  0  4 ... 16 20 20]
+ [ 0  0  0 ... 12 16 20]]
+[[15  4 41 ...  0 16  0]
+ [28  0 45 ...  4  7  4]
+ [26  4 40 ...  4  4  4]
+ ...
+ [ 8  8  8 ...  4  4  0]
+ [ 4  4  4 ...  8  8  4]
+ [ 0  0  0 ... 12  8  4]]
+[[18 30  0 ...  8  4  4]
+ [16 40  4 ...  6  4  4]
+ [10 41 14 ... 10  4  6]
+ ...
+ [12 12 12 ... 12 12 12]
+ [ 8  8  8 ...  4  4  4]
+ [ 4  4  8 ...  0  0  0]]
+[[ 8  8  6 ... 12 14  0]
+ [ 8  4 10 ... 10 10  0]
+ [ 4  6 10 ...  6 10  0]
+ ...
+ [ 4  4  8 ...  4  4  8]
+ [ 0  0  4 ...  0  1  4]
+ [ 0  0  0 ...  0  0  4]]
+[[ 4  0 14 ...  0  0  0]
+ [ 6  0  5 ...  0  2  0]
+ [10  0  4 ...  4  8  2]
+ ...
+ [49 45 40 ... 12 12  8]
+ [81 72 52 ... 12 12  8]
+ [77 61 42 ...  4  4  4]]
+[[255 255 255 ... 255 255 255]
+ [159 161 162 ... 159 165 160]
+ [  0   2   8 ...   0  14   2]
+ ...
+ [ 28  36  36 ...   4   4   0]
+ [ 28  32  36 ...   4   4   0]
+ [255 255 255 ... 255 255 255]]
+[[10  4  4 ...  4 14 10]
+ [18  4 12 ...  6 17  5]
+ [20  4 20 ... 12 18  4]
+ ...
+ [36 20  8 ...  8  8  8]
+ [38 24 12 ...  8 12 12]
+ [29 20 12 ...  8 12 12]]
+[[20  8 20 ...  0  4  3]
+ [10  3 16 ...  0 17  0]
+ [10  4  8 ...  2 20  0]
+ ...
+ [12 20 24 ... 20 16 12]
+ [ 8 16 24 ... 20 20 12]
+ [ 4 12 16 ... 12 11  8]]
+[[ 0  8  0 ...  2 14  8]
+ [ 2  2  0 ...  0 12  8]
+ [10  4  4 ...  0  8  4]
+ ...
+ [ 8  8  8 ...  8 12 16]
+ [ 8  4  0 ... 12 16 18]
+ [ 4  4  2 ...  8 12 12]]
+[[14 10 10 ...  8  0  4]
+ [ 7 21 10 ...  8  0  4]
+ [ 6 30  6 ...  4  0  4]
+ ...
+ [12  8  4 ...  0  0  0]
+ [ 8  4  4 ...  0  0  0]
+ [ 5  4  0 ...  0  0  0]]
+[[52  4  0 ... 12  4  8]
+ [32  4  4 ...  4  7  8]
+ [12  4  8 ...  0  4  4]
+ ...
+ [ 0  4  4 ...  4  4  4]
+ [ 0  0  0 ...  0  0  0]
+ [ 1  1  4 ...  2  0  0]]
+[[ 4  4  4 ...  0  0  6]
+ [ 2  0 14 ...  0  0  8]
+ [ 0  0 16 ...  8  0  8]
+ ...
+ [20 20 24 ... 32 32 36]
+ [ 8 16 20 ... 20 23 24]
+ [12 20 24 ... 11 16 19]]
+[[ 5  4  6 ...  4  6  0]
+ [ 8  2  4 ...  4 10  4]
+ [10  6  4 ...  8 10  4]
+ ...
+ [ 4  0  4 ...  0  0  4]
+ [ 0  0  4 ...  0  0  4]
+ [ 0  0  4 ...  0  2  4]]
+[[ 0 22 14 ...  4  2  4]
+ [ 0 16 25 ...  1  6  4]
+ [ 2  8 38 ...  0 10  4]
+ ...
+ [ 8 12 12 ...  4  8 12]
+ [ 4  4  8 ...  4  8 12]
+ [ 0  0  0 ...  4  4  8]]
+[[255 255 255 ... 255 255 255]
+ [169 165 160 ... 162 161 160]
+ [ 24  14   2 ...   8   4   2]
+ ...
+ [  0   6  12 ...   8  12  12]
+ [  0   4  12 ...  12  12  12]
+ [255 255 255 ... 255 255 255]]
+[[12  6  4 ...  0  4  6]
+ [14  4  4 ...  0  4  6]
+ [18  4  6 ...  0  0  6]
+ ...
+ [ 4  4  4 ... 20 16 16]
+ [ 4  4  4 ... 16 16 12]
+ [ 4  4  4 ... 16 12  9]]
+[[109  10   4 ...   8   0   0]
+ [103  10   8 ...   8   0   0]
+ [ 95  12  12 ...   6   0   0]
+ ...
+ [  4   4   8 ...   0   0   0]
+ [  4   8  10 ...   0   0   4]
+ [  4   8  12 ...   0   0   4]]
+[[ 8  0 14 ...  4 12  2]
+ [12  0 20 ...  4  6  0]
+ [14  0 32 ...  4  2  0]
+ ...
+ [ 0  4  8 ...  0  0  0]
+ [ 0  0  4 ...  0  0  0]
+ [ 0  4  8 ...  0  0  4]]
+[[ 4  0  4 ...  4  0  2]
+ [14  3  4 ...  4  0  2]
+ [30  6 10 ...  4  0  0]
+ ...
+ [ 0  4  8 ...  0  0  4]
+ [ 0  0  4 ...  0  0  0]
+ [ 0  0  4 ...  4  4  5]]
+[[ 2 18  2 ... 10 14 12]
+ [ 2 18  4 ...  3 11 12]
+ [ 2 10  4 ...  4  4  4]
+ ...
+ [16 20 26 ... 12 12  8]
+ [16 16 16 ...  4  4  4]
+ [ 8  4  4 ...  4  4  4]]
+[[ 8  4  0 ...  9  0  0]
+ [ 4  0  0 ... 10  0  0]
+ [ 0  0  4 ... 12  0  0]
+ ...
+ [ 8 12 16 ... 45 36 28]
+ [12 19 23 ... 14 10  8]
+ [24 32 40 ...  0  0  0]]
+[[ 0  2 26 ... 42  8  4]
+ [ 4  8 18 ... 38  7  4]
+ [12 12 20 ... 24  4  2]
+ ...
+ [40 32 22 ...  0  0  0]
+ [26 24 23 ...  0  0  0]
+ [15 16 16 ...  0  0  0]]
+[[255 255 255 ... 255 255 255]
+ [170 165 160 ... 159 163 159]
+ [ 30  14   2 ...   2  12   0]
+ ...
+ [ 16  12  12 ...   4   4   4]
+ [ 12  12   8 ...   4   4   4]
+ [255 255 255 ... 255 255 255]]
+[[ 4 28 30 ...  0 11  4]
+ [11 26 37 ...  0  6  2]
+ [16 18 30 ...  0  6  2]
+ ...
+ [12  8  4 ...  0  0  0]
+ [ 8  8  8 ...  0  0  0]
+ [ 4  4  8 ...  0  0  0]]
+[[255 255 255 ... 255 255 255]
+ [159 179 162 ... 165 162 165]
+ [  0  53   6 ...  14   8  12]
+ ...
+ [  0   0   0 ...   8   8   8]
+ [  0   0   0 ...   8   8   8]
+ [255 255 255 ... 255 255 255]]
+[[12  8  0 ...  0  4 12]
+ [10  6  0 ...  0  4 13]
+ [14  8  4 ...  0  6 12]
+ ...
+ [12 16 16 ...  4  4  4]
+ [12 19 20 ...  8  4  4]
+ [16 20 20 ...  4  4  4]]
+[[ 0 12 16 ...  0 12  0]
+ [ 0 16  8 ... 11 14  0]
+ [ 0  8  6 ... 22 14  4]
+ ...
+ [ 6  4  0 ...  0  0  4]
+ [12  4  0 ...  0  0  0]
+ [22 17 13 ...  0  0  0]]
+[[255 255 255 ... 255 255 255]
+ [159 159 162 ... 161 160 160]
+ [  2   4   6 ...   4   2   2]
+ ...
+ [ 28  20  14 ...   0   0   4]
+ [ 24  20  12 ...   0   0   4]
+ [255 255 255 ... 255 255 255]]
+[[28 12  4 ... 10  0  4]
+ [28 15  8 ...  8  0  4]
+ [28 16 10 ...  8  0  4]
+ ...
+ [16 16 20 ... 24 24 18]
+ [12 12 16 ... 20 20 16]
+ [ 8  8 12 ... 20 20 12]]
+[[255 255 255 ... 255 255 255]
+ [160 165 163 ... 159 160 161]
+ [  2  16  10 ...   0   2   4]
+ ...
+ [  0   4   4 ...  12   8   4]
+ [  4   4   4 ...  12   8   4]
+ [255 255 255 ... 255 255 255]]
+[[12  0  5 ...  8  0  4]
+ [20  8  0 ...  8  0  6]
+ [26 18  0 ...  8  0  6]
+ ...
+ [12  8  8 ...  0  0  0]
+ [16 12  9 ...  0  0  0]
+ [26 12  4 ...  4  4  4]]
+[[14 22  2 ...  0  6 12]
+ [14 28  6 ...  0  8 13]
+ [20 22 14 ...  2  8 14]
+ ...
+ [ 4  4  8 ...  4  4  4]
+ [ 4  4  4 ...  0  4  4]
+ [ 0  0  3 ...  0  0  4]]
+[[ 3 10 12 ... 12  2 14]
+ [ 8 14 12 ... 10  0 10]
+ [12 12 10 ...  8  0  6]
+ ...
+ [ 4  0  0 ...  0  0  0]
+ [ 0  0  0 ...  0  0  0]
+ [ 0  0  0 ...  0  0  0]]
+[[44  8  4 ...  6  4  8]
+ [45  6  4 ...  6  6  8]
+ [36  6  8 ...  6 10  4]
+ ...
+ [ 4  8  4 ...  8 12 16]
+ [ 4  4  0 ...  4  8 12]
+ [ 4  0  0 ...  4  8 11]]
+[[255 255 255 ... 255 255 255]
+ [173 169 159 ... 165 159 161]
+ [ 34  24   0 ...  16   2   4]
+ ...
+ [  8   8   8 ...   4   0   0]
+ [  8   8   8 ...   4   0   0]
+ [255 255 255 ... 255 255 255]]
+[[ 2 48  6 ...  8  0  0]
+ [ 0 48  6 ... 10  0  0]
+ [ 0 40  6 ... 12  4  4]
+ ...
+ [ 4  0  0 ...  0  0  2]
+ [ 6  0  0 ...  0  0  4]
+ [ 8  4  0 ...  0  4  4]]
+[[255 255 255 ... 255 255 255]
+ [162 162 162 ... 167 159 162]
+ [ 10   8   8 ...  20   0   4]
+ ...
+ [  0   0   0 ...   0   0   0]
+ [  0   0   0 ...   0   0   0]
+ [255 255 255 ... 255 255 255]]
+[[36 10 14 ...  2  4  2]
+ [35  8 16 ...  4  4  4]
+ [26  4 12 ...  4  4  4]
+ ...
+ [ 0  0  4 ...  8 12 16]
+ [ 0  0  0 ...  0  4  8]
+ [ 0  4  4 ...  4  4  0]]
+[[ 0 27 28 ...  4  4  0]
+ [ 2 31 17 ...  0  0  0]
+ [ 4 22 10 ...  0  0  4]
+ ...
+ [ 0  0  0 ...  4  8 12]
+ [ 0  0  0 ...  4  8 12]
+ [ 0  0  0 ...  8  8  8]]
+[[ 0 10 12 ... 18 12 22]
+ [ 0 12  8 ... 16 10 29]
+ [ 0 16  8 ... 14  6 36]
+ ...
+ [ 4  4  4 ...  4  4  4]
+ [ 4  4  4 ...  4  4  4]
+ [ 0  4  4 ...  4  4  4]]
+[[18 14  8 ... 12  6  0]
+ [16 16  8 ... 10  2  0]
+ [18 20  4 ...  8  0  0]
+ ...
+ [ 0  0  0 ...  4  4  4]
+ [ 0  0  0 ...  8  7  8]
+ [ 0  0  0 ...  8  9 12]]
+[[36  0 44 ...  4  9  0]
+ [13  0 53 ...  4  8  4]
+ [ 4  4 49 ...  0  4  6]
+ ...
+ [ 0  0  4 ...  4  4  8]
+ [ 0  4  8 ...  4  8  8]
+ [ 4  8 12 ...  8  8  4]]
+[[10 12 10 ...  4  8 12]
+ [11  8  8 ...  6  6 12]
+ [12  8  8 ...  4  6 12]
+ ...
+ [ 0  4  8 ...  0  0  2]
+ [ 0  4  8 ...  0  0  0]
+ [ 0  4  5 ...  0  0  0]]
+[[26  4 12 ...  4  6 34]
+ [30  8 10 ...  6  6 31]
+ [30  6  8 ...  6  6 30]
+ ...
+ [ 8  8 12 ... 12  8  8]
+ [12 16 16 ...  8  4  4]
+ [17 20 20 ...  4  4  4]]
+[[16 10 12 ... 20  0  6]
+ [12 18 13 ... 20  0  4]
+ [10 22 12 ... 16  0  4]
+ ...
+ [ 4 12 22 ...  8  8 12]
+ [ 8 16 22 ...  8  8 10]
+ [12 20 24 ...  4  4  4]]
+[[255 255 255 ... 255 255 255]
+ [178 180 166 ... 160 159 161]
+ [ 49  55  18 ...   2   0   4]
+ ...
+ [  8   8   8 ...   4   6   8]
+ [  4   4   4 ...   7   8   8]
+ [255 255 255 ... 255 255 255]]
+[[16  6  6 ...  6  4 12]
+ [14 10  8 ... 10  4 10]
+ [16 12 14 ... 10  8  6]
+ ...
+ [89 69 42 ...  4 12 16]
+ [69 53 36 ...  8 12 12]
+ [58 49 36 ...  4  8  8]]
+[[ 4  4  4 ...  5  0  4]
+ [10  0  6 ...  4  0 10]
+ [12  0 14 ...  4  0 18]
+ ...
+ [ 4  0  0 ...  8 12 12]
+ [ 8  4  0 ...  5  8 12]
+ [10  4  0 ...  8 12 12]]
+[[10  4  8 ...  0 12  4]
+ [10  6  6 ...  0 14  0]
+ [ 8  6  6 ...  0 16  0]
+ ...
+ [ 8  8  4 ...  0  0  0]
+ [ 9  8  8 ...  0  0  0]
+ [12 12  8 ...  0  0  0]]
+[[28  4  4 ...  4  4 12]
+ [33 11  2 ...  4  4 12]
+ [42 10  2 ...  2  4 12]
+ ...
+ [12  8 12 ... 12 12  8]
+ [12 12 12 ... 10  8  8]
+ [12 12 12 ...  8  8  4]]
+[[10  6 38 ...  4  2  0]
+ [ 8  8 30 ...  0  6  8]
+ [ 6  8 16 ...  0 12 22]
+ ...
+ [10 12 12 ...  8  8  4]
+ [12 16 20 ...  8  4  4]
+ [ 8 11 12 ...  4  4  4]]
+[[ 6 12  0 ... 10 20 10]
+ [ 4 11  0 ... 12 24 16]
+ [ 2 10  0 ...  8 28 24]
+ ...
+ [61 61 55 ...  4  0  0]
+ [57 57 53 ...  4  4  0]
+ [57 53 49 ...  4  4  4]]
+[[255 255 255 ... 255 255 255]
+ [168 162 165 ... 160 159 159]
+ [ 22   8  14 ...   2   4   0]
+ ...
+ [ 12  16  20 ...   4   4   4]
+ [ 12  16  20 ...   8   8   4]
+ [255 255 255 ... 255 255 255]]
+[[36 22  6 ...  6  0  0]
+ [36 21  2 ...  5  1  0]
+ [40 20  6 ...  4  6  0]
+ ...
+ [ 8  8  4 ... 12 12 16]
+ [ 8  8  8 ...  4  4  4]
+ [ 4  4  4 ...  0  0  0]]
+[[101  25  16 ...   4   0  15]
+ [ 67   9  12 ...   6   4  21]
+ [ 28   6  12 ...  12  10  18]
+ ...
+ [ 61  69  73 ...   0   0   0]
+ [ 50  69  81 ...   0   0   0]
+ [ 38  65  81 ...   0   0   0]]
+[[ 0 16  6 ...  6 28  0]
+ [ 0 15  9 ...  5 23  0]
+ [ 0 12 12 ...  4 20  2]
+ ...
+ [ 0  4  4 ...  4  4  4]
+ [ 4  4  4 ...  4  4  4]
+ [ 8  8  8 ...  3  0  0]]
+[[255 255 255 ... 255 255 255]
+ [165 162 161 ... 159 164 160]
+ [ 16   4   4 ...   0  12   0]
+ ...
+ [  4   4   4 ...   8  12  12]
+ [  4   4   4 ...  12  12  12]
+ [255 255 255 ... 255 255 255]]
+[[ 6 18  4 ... 12 10  4]
+ [ 6 14  2 ... 12  6  4]
+ [ 6 10  4 ...  8 10  0]
+ ...
+ [24 24 16 ... 16 12  8]
+ [20 20 16 ... 12 12 12]
+ [16 16 12 ...  8  9  8]]
+[[ 8 18  4 ...  4  5  8]
+ [ 2 20  2 ...  6 10  8]
+ [ 2 18  0 ...  8 12  8]
+ ...
+ [16 16 10 ... 12 16 20]
+ [16 16 12 ...  8 12 16]
+ [16 16 16 ...  8 11 12]]
+[[12 18  4 ...  4  4  2]
+ [12 24  0 ...  4  4  4]
+ [20 34  2 ...  8  4  4]
+ ...
+ [12 16 16 ...  4  0  0]
+ [20 23 23 ...  0  0  0]
+ [24 28 32 ...  0  0  0]]
+[[ 4 18  8 ...  4  8 10]
+ [ 8 10 11 ...  4  8 12]
+ [ 8  8 14 ...  4  6 16]
+ ...
+ [20 12  4 ...  0  0  0]
+ [20 12  4 ...  0  0  4]
+ [24 12  6 ...  0  0  4]]
+[[ 8  2  6 ...  4  4  2]
+ [ 9  4 12 ...  2  6  4]
+ [10  4 18 ...  0  8  4]
+ ...
+ [ 0  0  4 ...  0  2  4]
+ [ 0  0  4 ...  0  0  0]
+ [ 0  0  4 ...  0  0  0]]
+[[255 255 255 ... 255 255 255]
+ [166 161 163 ... 161 162 161]
+ [ 18   4  10 ...   6   6   4]
+ ...
+ [ 20  24  24 ...   0   0   0]
+ [ 20  20  20 ...   0   0   0]
+ [255 255 255 ... 255 255 255]]
+[[255 255 255 ... 255 255 255]
+ [161 161 166 ... 161 159 161]
+ [  2   4  18 ...   4   0   4]
+ ...
+ [  4   0   0 ...   0   0   0]
+ [  4   0   0 ...   0   0   0]
+ [255 255 255 ... 255 255 255]]
+[[16  8  0 ... 14 10  0]
+ [10 27  0 ... 13  5  0]
+ [14 40  0 ...  8  0  0]
+ ...
+ [ 8  8 10 ...  0  0  0]
+ [23 23 23 ...  0  0  0]
+ [40 36 32 ...  0  4  4]]
+[[ 6 22  4 ... 12  0  4]
+ [10 29  3 ...  8  0  4]
+ [16 26  2 ...  4  0  4]
+ ...
+ [ 6 12 24 ...  8  4  0]
+ [11 20 32 ... 12  5  4]
+ [16 26 36 ... 14  8  4]]
+[[ 0  0 17 ...  0  4  0]
+ [ 0  8 22 ...  0  0  0]
+ [ 4 10 22 ...  0  2  8]
+ ...
+ [16 10  8 ...  0  0  4]
+ [16 16 16 ...  4  7  8]
+ [16 24 27 ... 12 16 16]]
+[[12  4 30 ...  2  2  2]
+ [12  4 30 ...  4  4  2]
+ [12  4 30 ...  6  4  4]
+ ...
+ [18 16 16 ...  8  4  0]
+ [15 16 16 ...  8  4  0]
+ [11 12 16 ...  8  4  0]]
+[[255 255 255 ... 255 255 255]
+ [164 161 164 ... 160 161 161]
+ [ 12   4  10 ...   4   4   4]
+ ...
+ [  4   4   8 ...  12  12  12]
+ [  4   8   8 ...  12  12  12]
+ [255 255 255 ... 255 255 255]]
+[[ 0  4 10 ...  4 18  0]
+ [ 0  4 15 ...  6 20  0]
+ [ 2 10 18 ...  8 16  0]
+ ...
+ [24 22 20 ...  8  8  8]
+ [31 20 16 ...  8 10 12]
+ [23 12  8 ...  8 12 16]]
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">training_data</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+80
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Before normalization</span>
+<span class="c1"># Full training set.</span>
+<span class="n">x_train</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># images array</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># labels</span>
+
+<span class="k">for</span> <span class="n">features</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">training_data</span><span class="p">:</span>
+    <span class="n">x_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+    <span class="n">y_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span><span class="n">x_train</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">x_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x_train</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">img_size</span><span class="p">,</span><span class="n">img_size</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(120, 120)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x_train</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[[[ 12],
+         [  4],
+         [ 14],
+         ...,
+         [  8],
+         [  0],
+         [  0]],
+
+        [[ 12],
+         [  4],
+         [ 12],
+         ...,
+         [  6],
+         [  0],
+         [  0]],
+
+        [[ 12],
+         [  4],
+         [ 10],
+         ...,
+         [  6],
+         [  0],
+         [  0]],
+
+        ...,
+
+        [[  0],
+         [  0],
+         [  4],
+         ...,
+         [  4],
+         [  0],
+         [  0]],
+
+        [[  0],
+         [  0],
+         [  1],
+         ...,
+         [  4],
+         [  0],
+         [  0]],
+
+        [[  0],
+         [  0],
+         [  0],
+         ...,
+         [  4],
+         [  0],
+         [  0]]],
+
+
+       [[[ 27],
+         [  2],
+         [ 34],
+         ...,
+         [  0],
+         [  8],
+         [ 15]],
+
+        [[ 28],
+         [  4],
+         [ 26],
+         ...,
+         [  0],
+         [  4],
+         [ 20]],
+
+        [[ 20],
+         [  6],
+         [ 24],
+         ...,
+         [  4],
+         [  2],
+         [ 18]],
+
+        ...,
+
+        [[  0],
+         [  0],
+         [  0],
+         ...,
+         [  0],
+         [  0],
+         [  0]],
+
+        [[  0],
+         [  0],
+         [  0],
+         ...,
+         [  0],
+         [  0],
+         [  0]],
+
+        [[  0],
+         [  0],
+         [  0],
+         ...,
+         [  4],
+         [  4],
+         [  4]]],
+
+
+       [[[ 16],
+         [  0],
+         [ 44],
+         ...,
+         [ 12],
+         [  4],
+         [  4]],
+
+        [[  8],
+         [  0],
+         [ 39],
+         ...,
+         [ 14],
+         [  8],
+         [  4]],
+
+        [[ 12],
+         [  0],
+         [ 28],
+         ...,
+         [ 10],
+         [  6],
+         [  6]],
+
+        ...,
+
+        [[  4],
+         [  0],
+         [  0],
+         ...,
+         [  0],
+         [  0],
+         [  0]],
+
+        [[  0],
+         [  0],
+         [  0],
+         ...,
+         [  0],
+         [  0],
+         [  0]],
+
+        [[  4],
+         [  1],
+         [  0],
+         ...,
+         [  0],
+         [  0],
+         [  0]]],
+
+
+       ...,
+
+
+       [[[ 12],
+         [  4],
+         [ 30],
+         ...,
+         [  2],
+         [  2],
+         [  2]],
+
+        [[ 12],
+         [  4],
+         [ 30],
+         ...,
+         [  4],
+         [  4],
+         [  2]],
+
+        [[ 12],
+         [  4],
+         [ 30],
+         ...,
+         [  6],
+         [  4],
+         [  4]],
+
+        ...,
+
+        [[ 18],
+         [ 16],
+         [ 16],
+         ...,
+         [  8],
+         [  4],
+         [  0]],
+
+        [[ 15],
+         [ 16],
+         [ 16],
+         ...,
+         [  8],
+         [  4],
+         [  0]],
+
+        [[ 11],
+         [ 12],
+         [ 16],
+         ...,
+         [  8],
+         [  4],
+         [  0]]],
+
+
+       [[[255],
+         [255],
+         [255],
+         ...,
+         [255],
+         [255],
+         [255]],
+
+        [[164],
+         [161],
+         [164],
+         ...,
+         [160],
+         [161],
+         [161]],
+
+        [[ 12],
+         [  4],
+         [ 10],
+         ...,
+         [  4],
+         [  4],
+         [  4]],
+
+        ...,
+
+        [[  4],
+         [  4],
+         [  8],
+         ...,
+         [ 12],
+         [ 12],
+         [ 12]],
+
+        [[  4],
+         [  8],
+         [  8],
+         ...,
+         [ 12],
+         [ 12],
+         [ 12]],
+
+        [[255],
+         [255],
+         [255],
+         ...,
+         [255],
+         [255],
+         [255]]],
+
+
+       [[[  0],
+         [  4],
+         [ 10],
+         ...,
+         [  4],
+         [ 18],
+         [  0]],
+
+        [[  0],
+         [  4],
+         [ 15],
+         ...,
+         [  6],
+         [ 20],
+         [  0]],
+
+        [[  2],
+         [ 10],
+         [ 18],
+         ...,
+         [  8],
+         [ 16],
+         [  0]],
+
+        ...,
+
+        [[ 24],
+         [ 22],
+         [ 20],
+         ...,
+         [  8],
+         [  8],
+         [  8]],
+
+        [[ 31],
+         [ 20],
+         [ 16],
+         ...,
+         [  8],
+         [ 10],
+         [ 12]],
+
+        [[ 23],
+         [ 12],
+         [  8],
+         ...,
+         [  8],
+         [ 12],
+         [ 16]]]], dtype=uint8)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_train</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+80
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">x_train</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+80
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">x_train</span><span class="o">/</span><span class="mf">255.0</span> <span class="c1"># Normalization.</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">X_train</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="mi">79</span><span class="p">,:,:,</span><span class="mi">0</span><span class="p">],</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">[</span><span class="mi">79</span><span class="p">,:,:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+<span class="c1"># please check</span>
+<span class="c1"># normalization</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(120, 120)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="_images/code_12_1.png" src="_images/code_12_1.png" />
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+(120, 120, 1)
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">X_train</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+array([[[0.10588235],
+        [0.00784314],
+        [0.13333333],
+        ...,
+        [0.        ],
+        [0.03137255],
+        [0.05882353]],
+
+       [[0.10980392],
+        [0.01568627],
+        [0.10196078],
+        ...,
+        [0.        ],
+        [0.01568627],
+        [0.07843137]],
+
+       [[0.07843137],
+        [0.02352941],
+        [0.09411765],
+        ...,
+        [0.01568627],
+        [0.00784314],
+        [0.07058824]],
+
+       ...,
+
+       [[0.        ],
+        [0.        ],
+        [0.        ],
+        ...,
+        [0.        ],
+        [0.        ],
+        [0.        ]],
+
+       [[0.        ],
+        [0.        ],
+        [0.        ],
+        ...,
+        [0.        ],
+        [0.        ],
+        [0.        ]],
+
+       [[0.        ],
+        [0.        ],
+        [0.        ],
+        ...,
+        [0.01568627],
+        [0.01568627],
+        [0.01568627]]])
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># model</span>
+
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="nn">tf</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras</span> <span class="k">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="k">import</span> <span class="n">Dense</span><span class="p">,</span><span class="n">Dropout</span><span class="p">,</span><span class="n">Activation</span><span class="p">,</span><span class="n">Flatten</span><span class="p">,</span><span class="n">Conv2D</span><span class="p">,</span><span class="n">MaxPooling2D</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+
+<span class="c1">#1</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">input_shape</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))</span><span class="c1">#8</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s2">&quot;elu&quot;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
+
+<span class="c1">#2</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s2">&quot;elu&quot;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
+
+<span class="c1">#3</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s2">&quot;elu&quot;</span><span class="p">))</span>
+
+<span class="c1">#4</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s2">&quot;elu&quot;</span><span class="p">))</span>
+
+<span class="c1">#5</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s2">&quot;elu&quot;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling2D</span><span class="p">(</span><span class="n">pool_size</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
+
+<span class="c1">#6</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">16</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s2">&quot;elu&quot;</span><span class="p">))</span>
+
+<span class="c1">#7</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Flatten</span><span class="p">())</span>
+<span class="c1">#model.add(Dense(64))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span><span class="n">activation</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">elu</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>
+
+<span class="c1">#8</span>
+<span class="c1">#model.add(Dense(64))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span><span class="n">activation</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">elu</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.5</span><span class="p">))</span>
+
+<span class="c1">#9</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># note</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s1">&#39;softmax&#39;</span><span class="p">))</span>
+<span class="c1">#model.add(Dense(2,activation=tf.nn.softmax))</span>
+
+
+<span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s2">&quot;binary_crossentropy&quot;</span><span class="p">,</span><span class="n">optimizer</span><span class="o">=</span><span class="s2">&quot;adam&quot;</span><span class="p">,</span><span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">])</span>
+
+
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">batch_size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">epochs</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span><span class="n">validation_split</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-23-44f62753fa9f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>model <span class="ansi-blue-fg">=</span> Sequential<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span>
+<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-red-fg">#1</span>
+<span class="ansi-green-intense-fg ansi-bold">      4</span> model<span class="ansi-blue-fg">.</span>add<span class="ansi-blue-fg">(</span>Conv2D<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">64</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">,</span><span class="ansi-cyan-fg">3</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span>input_shape <span class="ansi-blue-fg">=</span> X_train<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">:</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-red-fg">#8</span>
+<span class="ansi-green-intense-fg ansi-bold">      5</span> model<span class="ansi-blue-fg">.</span>add<span class="ansi-blue-fg">(</span>Activation<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;elu&#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name &#39;Sequential&#39; is not defined
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+
+<span></span><span class="c1"># ------------------ Testing -------------------#</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Testing Data</span>
+
+<span class="n">DATADIR_TEST</span> <span class="o">=</span> <span class="s2">&quot;ASTRO_IMAGES_40/Bbh_ALL/TEST/TEST1_ALL/&quot;</span>
+<span class="n">testing_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">def</span> <span class="nf">creating_testing_data</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">DATADIR_TEST</span><span class="p">):</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">DATADIR_TEST</span><span class="p">,</span><span class="n">img</span><span class="p">)</span>
+        <span class="n">img_num</span> <span class="o">=</span> <span class="n">img</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">img_num</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="n">cv2</span><span class="o">.</span><span class="n">IMREAD_GRAYSCALE</span><span class="p">)</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,(</span><span class="n">img_size</span><span class="p">,</span><span class="n">img_size</span><span class="p">))</span>
+        <span class="n">testing_data</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">img</span><span class="p">),</span><span class="n">img_num</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">testing_data</span>
+
+<span class="n">creating_testing_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">testing_data</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Full testing Set.</span>
+
+<span class="n">x_test</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">features</span><span class="p">,</span><span class="n">label</span> <span class="ow">in</span> <span class="n">testing_data</span><span class="p">:</span>
+    <span class="n">x_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">features</span><span class="p">)</span>
+    <span class="n">y_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">label</span><span class="p">)</span>
+
+<span class="n">x_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">img_size</span><span class="p">,</span><span class="n">img_size</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">x_test</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="n">X_test</span> <span class="o">=</span> <span class="n">x_test</span><span class="o">/</span><span class="mf">255.0</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Now we have model which is trained .. so Prediction.</span>
+
+<span class="n">image_index</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="n">image_index</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">img_size</span><span class="p">,</span><span class="n">img_size</span><span class="p">),</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;Greys&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">y_test</span><span class="p">[</span><span class="n">image_index</span><span class="p">])</span>
+<span class="n">pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">[</span><span class="n">image_index</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">img_size</span><span class="p">,</span><span class="n">img_size</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Prediction is ---&quot;0 for signal and 1 for noise&quot;----------------&gt; &#39;</span><span class="p">,</span><span class="n">pred</span><span class="o">.</span><span class="n">argmax</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre>
+<span></span>
+</pre></div>
+</div>
+</div>
+
+
+        </div>
+      </div>
+
+      <div id="side-menu-container">
+
+        <div id="search" role="search">
+        <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+            <input type="text" name="q" placeholder="Search..." />
+            <input type="hidden" name="check_keywords" value="yes" />
+            <input type="hidden" name="area" value="default" />
+        </form>
+</div>
+
+        <div id="side-menu" role="navigation">
+
+          
+  
+    
+  
+  
+    <div class="local-toc"><ul class="simple">
+</ul>
+</div>
+  
+
+
+        </div>
+
+        
+
+      </div>
+
+    </div>
+
+<footer>
+    <div id="footer-info">
+        <ul id="build-details">
+            
+                <li class="footer-element">
+                    
+                        <a href="_sources/code.ipynb.txt" rel="nofollow"> source</a>
+                    
+                </li>
+            
+
+            
+
+            
+        </ul>
+        <div id="credit">
+            created with <a href="http://sphinx-doc.org/">Sphinx</a> and <a href="https://github.com/Autophagy/insegel">Insegel</a>
+
+        </div>
+    </div>
+
+    <a id="menu-toggle" class="fa fa-bars" aria-hidden="true"></a>
+
+    <script type="text/javascript">
+      $("#menu-toggle").click(function() {
+        $("#menu-toggle").toggleClass("toggled");
+        $("#side-menu-container").slideToggle(300);
+      });
+    </script>
+
+</footer> 
+
+</div>
+
+</body>
+</html>
